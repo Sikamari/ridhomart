@@ -1,0 +1,209 @@
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@mixin backgroundColor {
+   background-color: #ff471a;
+}
+
+@mixin colorFontHover {
+   color: white;
+}
+
+@mixin fontHeader {
+   color: #e62e00;
+   font-weight: 600;
+   font-family: Lato, sans-serif;
+}
+
+@mixin fontContent {
+   color: #e62e00;
+   font-family: Lato, sans-serif;
+}
+
+.navbar {
+   overflow: hidden;
+   // background-color: #333;
+   font-family: Lato, sans-serif;
+   margin-left: 3rem;
+   display: flex;
+
+   a {
+      font-size: 16px;
+      @include fontHeader();
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+
+      &:hover {
+         @include colorFontHover();
+         background-color: #ff5c33;
+      }
+   }
+
+   .dropdown {
+      .dropbtn {
+         font-size: 16px;
+         border: none;
+         outline: none;
+         @include fontHeader();
+         padding: 14px 16px;
+         background-color: inherit;
+         font-family: inherit;
+         /* Important for vertical align on mobile phones */
+         margin: 0;
+         /* Important for vertical align on mobile phones */
+      }
+
+      &:hover {
+         .dropdown-content {
+            display: block;
+         }
+
+         .dropbtn {
+            @include colorFontHover();
+            @include backgroundColor();
+
+         }
+      }
+
+      .dropdown-content {
+         display: none;
+         position: absolute;
+         background-color: #f9f9f9;
+         min-width: 160px;
+         // box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+         z-index: 1;
+
+         a {
+            float: none;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+
+
+            &:hover {
+               @include backgroundColor();
+            }
+         }
+      }
+   }
+
+   .logo {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      margin-right: 3rem;
+      width: 100px;
+      height: 70px;
+      @include backgroundColor();
+      border-radius: 0px 0px 20px 20px;
+      box-shadow: 0px 4px 10px #ff471a;
+      z-index: 1;
+
+      p {
+         font-family: Pacifico, sans-serif;
+         color: white;
+         margin: auto 1.2rem;
+      }
+   }
+}
+
+.closeline {
+   margin: auto;
+   width: 93%;
+   height: 3px;
+   @include backgroundColor();
+   opacity: 0.5;
+   // box-shadow: 0px 2.5px 5px #ff471a;
+   z-index: 0;
+
+}
+
+.content {
+
+   .content-title {
+      display: flex;
+      justify-content: center;
+
+      h1 {
+         @include fontHeader();
+         margin-top: 50px;
+         font-family: Lato, sans-serif;
+      }
+   }
+
+   .content-library {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .card {
+         max-width: 300px;
+         margin-top: 2rem;
+         margin-bottom: 1rem;
+         // max-height: 150px;
+
+         .text {
+            margin-top: -3px;
+            padding: 2px 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            display: block;
+            @include fontContent();
+            font-size: 0.8rem;
+            height: 200px;
+            // position: relative;
+
+            p {
+               text-align: left;
+            }
+         }
+      }
+
+      img {
+         width: 300px;
+         height: auto;
+      }
+   }
+}
+
+
+@media screen and (max-width: 1024px) {
+
+   // body {
+   //     display: none;
+   // }
+   .content {
+      .content-library {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         flex-wrap: wrap;
+         // align-items: center;
+
+         .card {
+            max-width: 250px;
+            margin-top: 25px;
+            margin-bottom: 0.5rem;
+
+            img {
+               width: 250px;
+               height: auto;
+            }
+
+            .text {
+               max-height: 175px;
+            }
+         }
+      }
+   }
+}
+
+// ! justify-content -> digunakan untuk membuat flexbox posisi horizontal/row
+// ! align-items -> digunakan untuk membuat flexbox posisi vertikal/column
