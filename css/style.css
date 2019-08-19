@@ -12,7 +12,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
 }
 
 .navbar a {
