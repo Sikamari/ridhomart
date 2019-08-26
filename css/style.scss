@@ -173,6 +173,45 @@ body {
    }
 }
 
+#closeline-footer {
+   margin-top: 2rem;
+}
+
+.footer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 10rem;
+
+   .footer-header {
+      @include fontHeader();
+   }
+
+   .footer-text {
+      p {
+         @include fontContent();
+      }
+   }
+
+   .btn-whatsapp {
+      background-color: #ff471a;
+      outline: none;
+      padding: 0.7rem 2rem;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+         background-color: #81240d;
+      }
+
+      a {
+         text-decoration: none;
+         @include colorFontHover();
+      }
+
+   }
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -185,25 +224,29 @@ body {
          flex-direction: row;
          justify-content: space-around;
          flex-wrap: wrap;
-         // align-items: center;
+         align-items: center;
 
-         .card {
-            max-width: 250px;
-            margin-top: 25px;
-            margin-bottom: 0.5rem;
+      }
 
-            img {
-               width: 250px;
-               height: auto;
-            }
+      .card {
+         max-width: 300px;
+         margin-top: 25px;
+         margin-bottom: 0.5rem;
 
-            .text {
-               max-height: 175px;
-            }
+         img {
+            width: 250px;
+            height: auto;
+         }
+
+         .text {
+            width: 220px;
+            max-height: 175px;
          }
       }
    }
+
 }
+
 
 // ! justify-content -> digunakan untuk membuat flexbox posisi horizontal/row
 // ! align-items -> digunakan untuk membuat flexbox posisi vertikal/column
