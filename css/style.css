@@ -242,5 +242,8 @@ body {
     width: 220px;
     max-height: 175px;
   }
+  .footer .footer-text p {
+    max-width: 600px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
